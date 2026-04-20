@@ -179,6 +179,7 @@
 
     externals: ($) => [$.comment],
 
+
     rules: {
       source_file: ($) => repeat($._expression),
 
@@ -407,12 +408,22 @@
         ),
 
       span: ($) =>
-        prec.right(
-          PRECEDENCE_CALL,
-          seq(
-            optional($._expression),
+        choice(
+          prec.right(
+            PRECEDENCE_PREFIX_MINUS - 1,
+            seq($._expression, ";;", $._expression),
+          ),
+          prec.right(
+            PRECEDENCE_PREFIX_MINUS - 1,
+            seq($._expression, ";;"),
+          ),
+          prec.right(
+            PRECEDENCE_CALL + 1,
+            seq(";;", $._expression),
+          ),
+          prec.right(
+            PRECEDENCE_CALL + 1,
             ";;",
-            optional($._expression),
           ),
         ),
 
