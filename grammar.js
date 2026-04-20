@@ -260,6 +260,7 @@
           prec(PRECEDENCE_POSTFIX_BANGBANG, seq($._expression, "!!")),
           prec(PRECEDENCE_POSTFIX_MINUSMINUS, seq($._expression, "--")),
           prec(PRECEDENCE_POSTFIX_PLUSPLUS, seq($._expression, "++")),
+          prec(PRECEDENCE_FAKE_EQUALDOT, seq($._expression, "=.")),
         ),
 
       binary: ($) =>
@@ -280,6 +281,10 @@
           prec.left(
             PRECEDENCE_BARMINUSGREATER,
             seq($._expression, "|->", $._expression),
+          ),
+          prec.right(
+            PRECEDENCE_SLASHCOLON,
+            seq($._expression, "/:", $._expression),
           ),
           prec.left(
             PRECEDENCE_SLASHSLASH,

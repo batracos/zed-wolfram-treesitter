@@ -343,3 +343,71 @@ x; y
   (infix
     (symbol)
     (symbol)))
+
+================
+Unset
+================
+
+x =.
+
+---
+
+(source_file
+  (postfix
+    (symbol)))
+
+================
+TagUnset
+================
+
+f /: f[x_] =.
+
+---
+
+(source_file
+  (postfix
+    (binary
+      (symbol)
+      (call
+        head: (symbol)
+        arguments: (pattern
+          name: (symbol)
+          constraint: (blank))))))
+
+================
+TagSetDelayed
+================
+
+f /: f[x_] := 1
+
+---
+
+(source_file
+  (binary
+    (binary
+      (symbol)
+      (call
+        head: (symbol)
+        arguments: (pattern
+          name: (symbol)
+          constraint: (blank))))
+    (integer)))
+
+================
+TagSet
+================
+
+f /: f[x_] = 1
+
+---
+
+(source_file
+  (binary
+    (binary
+      (symbol)
+      (call
+        head: (symbol)
+        arguments: (pattern
+          name: (symbol)
+          constraint: (blank))))
+    (integer)))
