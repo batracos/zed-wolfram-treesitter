@@ -42,6 +42,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "span"
+        },
+        {
+          "type": "SYMBOL",
           "name": "group"
         }
       ]
@@ -1406,6 +1410,43 @@
           {
             "type": "STRING",
             "value": "]]"
+          }
+        ]
+      }
+    },
+    "span": {
+      "type": "PREC_RIGHT",
+      "value": 176,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_expression"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          },
+          {
+            "type": "STRING",
+            "value": ";;"
+          },
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_expression"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
           }
         ]
       }

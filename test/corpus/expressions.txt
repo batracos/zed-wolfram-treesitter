@@ -67,6 +67,62 @@ a[[1, 2]]
       (integer))))
 
 ================
+Span - both bounds
+================
+
+a[[1;;4]]
+
+---
+
+(source_file
+  (part
+    head: (symbol)
+    arguments: (span
+      (integer)
+      (integer))))
+
+================
+Span - start only
+================
+
+a[[1;;]]
+
+---
+
+(source_file
+  (part
+    head: (symbol)
+    arguments: (span
+      (integer))))
+
+================
+Span - end only
+================
+
+a[[;;4]]
+
+---
+
+(source_file
+  (part
+    head: (symbol)
+    arguments: (span
+      (integer))))
+
+================
+Span - no bounds
+================
+
+a[[;;]]
+
+---
+
+(source_file
+  (part
+    head: (symbol)
+    arguments: (span)))
+
+================
 Nested function call
 ================
 

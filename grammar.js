@@ -191,6 +191,7 @@
           $.infix,
           $.call,
           $.part,
+          $.span,
           $.group,
         ),
 
@@ -402,6 +403,16 @@
             "[[",
             optional(field("arguments", $._expression)),
             "]]",
+          ),
+        ),
+
+      span: ($) =>
+        prec.right(
+          PRECEDENCE_CALL,
+          seq(
+            optional($._expression),
+            ";;",
+            optional($._expression),
           ),
         ),
 

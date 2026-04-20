@@ -44,6 +44,10 @@
           "named": true
         },
         {
+          "type": "span",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -99,6 +103,10 @@
             "named": true
           },
           {
+            "type": "span",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -146,6 +154,10 @@
           },
           {
             "type": "real",
+            "named": true
+          },
+          {
+            "type": "span",
             "named": true
           },
           {
@@ -205,6 +217,10 @@
           "named": true
         },
         {
+          "type": "span",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -257,6 +273,10 @@
         },
         {
           "type": "real",
+          "named": true
+        },
+        {
+          "type": "span",
           "named": true
         },
         {
@@ -315,6 +335,10 @@
             "named": true
           },
           {
+            "type": "span",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -362,6 +386,10 @@
           },
           {
             "type": "real",
+            "named": true
+          },
+          {
+            "type": "span",
             "named": true
           },
           {
@@ -421,6 +449,10 @@
           "named": true
         },
         {
+          "type": "span",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -473,6 +505,10 @@
         },
         {
           "type": "real",
+          "named": true
+        },
+        {
+          "type": "span",
           "named": true
         },
         {
@@ -529,6 +565,69 @@
         },
         {
           "type": "real",
+          "named": true
+        },
+        {
+          "type": "span",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "span",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "binary",
+          "named": true
+        },
+        {
+          "type": "call",
+          "named": true
+        },
+        {
+          "type": "group",
+          "named": true
+        },
+        {
+          "type": "infix",
+          "named": true
+        },
+        {
+          "type": "integer",
+          "named": true
+        },
+        {
+          "type": "part",
+          "named": true
+        },
+        {
+          "type": "postfix",
+          "named": true
+        },
+        {
+          "type": "prefix",
+          "named": true
+        },
+        {
+          "type": "real",
+          "named": true
+        },
+        {
+          "type": "span",
           "named": true
         },
         {
@@ -680,6 +779,10 @@
   },
   {
     "type": ";",
+    "named": false
+  },
+  {
+    "type": ";;",
     "named": false
   },
   {
