@@ -199,7 +199,7 @@
 
       _leaf: ($) => choice($.symbol, $.integer, $.real, $.string, $.blank, $.blank_default, $.blank_sequence, $.blank_null_sequence),
 
-      symbol: ($) => /\$?[a-zA-Z][a-zA-Z0-9\$]*/,
+      symbol: ($) => /`?(\$?[a-zA-Z][a-zA-Z0-9\$]*`)*\$?[a-zA-Z][a-zA-Z0-9\$]*/,
 
       integer: ($) => /([0-9]+\^\^)?[0-9a-zA-Z]+`{0,2}[0-9]*(\*\^-?[0-9]+)?/,
 

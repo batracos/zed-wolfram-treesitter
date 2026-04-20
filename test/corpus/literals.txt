@@ -129,3 +129,49 @@ $foo
 
 (source_file
   (symbol))
+
+================
+Symbol - context qualified
+================
+
+Global`x
+
+---
+
+(source_file
+  (symbol))
+
+================
+Symbol - nested context
+================
+
+my`contex`f
+
+---
+
+(source_file
+  (symbol))
+
+================
+Symbol - relative context (leading backtick)
+================
+
+`localSymbol
+
+---
+
+(source_file
+  (symbol))
+
+================
+Symbol - context qualified call
+================
+
+my`contex`f[my`var`x]
+
+---
+
+(source_file
+  (call
+    head: (symbol)
+    arguments: (symbol)))
