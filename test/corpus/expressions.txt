@@ -1,0 +1,249 @@
+================
+Function call - single argument
+================
+
+f[x]
+
+---
+
+(source_file
+  (call
+    head: (symbol)
+    arguments: (symbol)))
+
+================
+Function call - multiple arguments
+================
+
+f[x, y]
+
+---
+
+(source_file
+  (call
+    head: (symbol)
+    arguments: (infix
+      (symbol)
+      (symbol))))
+
+================
+Nested function call
+================
+
+f[g[x]]
+
+---
+
+(source_file
+  (call
+    head: (symbol)
+    arguments: (call
+      head: (symbol)
+      arguments: (symbol))))
+
+================
+Addition
+================
+
+x + y
+
+---
+
+(source_file
+  (infix
+    (symbol)
+    (symbol)))
+
+================
+Assignment - Set
+================
+
+x = 5
+
+---
+
+(source_file
+  (binary
+    (symbol)
+    (integer)))
+
+================
+Assignment - SetDelayed
+================
+
+f[x] := x
+
+---
+
+(source_file
+  (binary
+    (call
+      head: (symbol)
+      arguments: (symbol))
+    (symbol)))
+
+================
+Prefix - Not
+================
+
+!x
+
+---
+
+(source_file
+  (prefix
+    (symbol)))
+
+================
+Postfix - Function
+================
+
+x &
+
+---
+
+(source_file
+  (postfix
+    (symbol)))
+
+================
+Logical And
+================
+
+x && y
+
+---
+
+(source_file
+  (infix
+    (symbol)
+    (symbol)))
+
+================
+Comparison - Equal
+================
+
+x == y
+
+---
+
+(source_file
+  (infix
+    (symbol)
+    (symbol)))
+
+================
+Rule operator
+================
+
+a -> 1
+
+---
+
+(source_file
+  (binary
+    (symbol)
+    (integer)))
+
+================
+Postfix application
+================
+
+x // f
+
+---
+
+(source_file
+  (binary
+    (symbol)
+    (symbol)))
+
+================
+Apply
+================
+
+f @@ {1, 2}
+
+---
+
+(source_file
+  (binary
+    (symbol)
+    (group
+      (infix
+        (integer)
+        (integer)))))
+
+================
+Association
+================
+
+<|a -> 1, b -> 2|>
+
+---
+
+(source_file
+  (group
+    (infix
+      (binary
+        (symbol)
+        (integer))
+      (binary
+        (symbol)
+        (integer)))))
+
+================
+List
+================
+
+{1, 2, 3}
+
+---
+
+(source_file
+  (group
+    (infix
+      (infix
+        (integer)
+        (integer))
+      (integer))))
+
+================
+Parenthesized expression
+================
+
+(x + y)
+
+---
+
+(source_file
+  (group
+    (infix
+      (symbol)
+      (symbol))))
+
+================
+String in function call
+================
+
+f["hello"]
+
+---
+
+(source_file
+  (call
+    head: (symbol)
+    arguments: (string)))
+
+================
+Compound expression
+================
+
+x; y
+
+---
+
+(source_file
+  (infix
+    (symbol)
+    (symbol)))
